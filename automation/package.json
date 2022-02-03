@@ -1,0 +1,51 @@
+{
+  "name": "automated-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gulp-watch": "gulp watch",
+    "gulp-styles": "gulp styles",
+    "gulp-scripts": "gulp scripts",
+    "gulp-sass": "gulp sass",
+    "gulp-watch-admin": "gulp watch-admin",
+    "gulp-styles-admin": "gulp styles-admin",
+    "gulp-scripts-admin": "gulp scripts-admin",
+    "gulp-sass-admin": "gulp sass-admin",
+    "gulp-plugin-structure": "gulp plugin-structure",
+    "gulp-watch-theme": "gulp watch-theme",
+    "gulp-styles-theme": "gulp styles-theme",
+    "gulp-scripts-theme": "gulp scripts-theme",
+    "gulp-sass-theme": "gulp sass-theme",
+    "gulp-watch-theme-admin": "gulp watch-theme-admin",
+    "gulp-styles-theme-admin": "gulp styles-theme-admin",
+    "gulp-scripts-theme-admin": "gulp scripts-theme-admin",
+    "gulp-sass-theme-admin": "gulp sass-theme-admin",
+    "gulp-theme-structure": "gulp theme-structure",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vecsei Szilveszter <szilveszter@xarites.com> (https://xarites.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@wordpress/scripts": "^20.0.0",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-install": "^1.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-shell": "^0.8.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "node-sass": "^7.0.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "jquery": "^3.4.1"
+  }
+}
