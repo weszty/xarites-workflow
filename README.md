@@ -1,6 +1,3 @@
-# xarites-workflow
- My personal tool that I adapted for the company and my colleagues.
-
 ## XARITES THE CREATIVE AGENCY SRL
 
 ## _Automation workflow_
@@ -20,6 +17,8 @@ We use Gulp + Webpack for fast development, here you will find a list of its fea
 - Export SASS files to CSS files
 - Export JS modules
 - Bundle JS using webpack
+- Compress images
+- Convert images to WebP format
 - Browser Sync
 
 ## Tech
@@ -30,8 +29,9 @@ This tool must have the following to work properly:
 
 ## Installation
 
-- Copy this directory in your `Plugin/Theme/WP root. `
-- Navigate to it and run `npm install`
+- Copy this directory( `automation` ) in your `Plugin/Theme/WP root. `
+- You can also install this plugin as it is, configure (`settings.js`) and run (`it has examples`).
+- Navigate to automation directory and run `npm install`
 - `All npm tasks will be executed from here!`
 
 ## Configuration
@@ -50,7 +50,7 @@ This tool has a settings file(`settins.js`), this is the only file you will need
 
 > `For plugins`
 
-I assume you use a boilderplate, I adapted to [this](https://wppb.me/) one.
+I assume you use a boilderplate, I adapted the file structure similar to [this one](https://wppb.me/).
 
 - This tool is capable creating the file structure for you, hit:
 
@@ -69,7 +69,7 @@ npm run gulp-scripts
 npm run gulp-scripts-admin
 ```
 
-For css it works the same way, with the exception that there is only a module directory where you can create your SASS files.
+For css it works the same way, `you create all your sass components` in the `modules directory`, and `include them` in the `module-scripts.scss` file.
 
 - All the SASS files from modules will be converted to CSS and bundeled in the build directory, this can also be done manually with `npm run gulp-sass` for client side, and `npm run gulp-sass-admin` for the admin side.
 
@@ -86,6 +86,23 @@ npm run gulp-sass-admin
 npm run gulp-styles
 
 npm run gulp-styles-admin
+```
+
+- This tool can compress/optimize images automatically.
+- You can also run it manually for images in `public directory` and `admin-directory`
+
+```sh
+npm run gulp-compress-img
+
+npm run gulp-compress-img-admin
+```
+
+- You can do the same thing for WebP conversions:
+
+```sh
+npm run gulp-convert-webp
+
+npm run gulp-convert-webp-admin
 ```
 
 Depending on where you work:
@@ -149,6 +166,23 @@ npm run gulp-scripts-theme
 npm run gulp-scripts-theme-admin
 ```
 
+- This tool can compress/optimize images automatically.
+- You can also run it manually for images in `public directory` and `admin-directory`
+
+```sh
+npm run gulp-compress-img-theme
+
+npm run gulp-compress-img-theme-admin
+```
+
+- You can do the same thing for WebP conversions:
+
+```sh
+npm run gulp-convert-webp-theme
+
+npm run gulp-convert-webp-theme-admin
+```
+
 ## Plugins
 
 This tool is currently extended with the following plugins.
@@ -172,6 +206,9 @@ Instructions on how to use them in your own application are linked below.
 | [node-sass]         | Wrapper around libsass                      |
 | [webpack]           | Packs CommonJs/AMD modules for the browser. |
 | [webpack-cli]       | CLI for webpack & friends                   |
+| [autoprefixer]      | Parse CSS and add vendor prefixes to CSS    |
+| [imagemin]          | Minify images seamlessly                    |
+| [webp]              | WebP binaries                               |
 
 These are optional:
 
@@ -236,3 +273,6 @@ MIT
 [axios]: https://www.npmjs.com/package/axios
 [jquery]: https://www.npmjs.com/package/jquery
 [dillinger]: https://dillinger.io/
+[autoprefixer]: https://www.npmjs.com/package/gulp-autoprefixer
+[imagemin]: https://www.npmjs.com/package/imagemin
+[webp]: https://www.npmjs.com/search?q=webp
