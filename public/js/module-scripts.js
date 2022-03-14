@@ -7,4 +7,6 @@ import Test from "./modules/test/Test";
 
 // Instantiate a new object using our modules/classes
 // const testModule = new TestModule();
+// testModule.event();
+
 // const test = new Test();
