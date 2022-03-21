@@ -1,0 +1,1 @@
+wp i18n make-pot ./ languages/xarites-workflow.pot
