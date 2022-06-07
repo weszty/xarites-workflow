@@ -117,6 +117,28 @@ npm run gulp-watch
 npm run gulp-watch-admin
 ```
 
+Watch without proxy:
+
+- Hit `gulp-watch-compile` to watch changes you make on the `public directory`
+- Hit `gulp-watch-compile-admin` to watch changes you make on the `admin directory`
+
+```sh
+npm run gulp-watch-compile
+
+npm run gulp-watch-compile-admin
+```
+
+Global watcher:
+
+- Hit `gulp-watch-all` to watch changes you make on the `public and admin directory` without proxy
+- Hit `gulp-watch-all-sync` to watch changes you make on the `public and admin directory` with proxy
+
+```sh
+npm run gulp-watch-all
+
+npm run gulp-watch-all-sync
+```
+
 > `For themes`
 
 Themes will use a simmilar structure like we have for plugins.
@@ -140,6 +162,28 @@ Depending on where you work:
 npm run gulp-watch-theme
 
 npm run gulp-watch-theme-admin
+```
+
+Watch without proxy:
+
+- Hit `gulp-watch-compile-theme` to watch changes you make on the `public directory`
+- Hit `gulp-watch-compile-theme-admin` to watch changes you make on the `admin directory`
+
+```sh
+npm run gulp-watch-compile-theme
+
+npm run gulp-watch-compile-theme-admin
+```
+
+Global watcher:
+
+- Hit `gulp-watch-theme-all` to watch changes you make on the `public and admin directory` without proxy
+- Hit `gulp-watch-theme-all-sync` to watch changes you make on the `public and admin directory` with proxy
+
+```sh
+npm run gulp-watch-theme-all
+
+npm run gulp-watch-theme-all-sync
 ```
 
 - If for any particular reason, you need the conversion only of the css modules, you can use `npm run gulp-styles-theme` for the public conversion, and `npm run gulp-styles-theme-admin` for the admin conversion, you will find the converted files in the build directory.
