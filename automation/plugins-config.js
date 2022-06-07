@@ -233,7 +233,89 @@ gulp.task("watch", function () {
   });
 
   /**
-   * Any scss changes
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appLocation + "public/css/modules/**/*.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/css/module-styles.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/img/*.{jpg,png}", gulp.parallel("compress-img"));
+  gulp.watch(settings.appLocation + "public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp"));
+  gulp.watch([settings.appLocation + "public/js/modules/**/*.js", settings.appLocation + "public/js/module-scripts.js"], gulp.parallel("waitForScripts"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-all-sync", function () {
+  browserSync.init({
+    notify: false,
+    proxy: settings.urlToPreview,
+    ghostMode: false
+  });
+
+  /**
+   * Any php changes
+   */
+  gulp.watch(settings.appLocation + "**/*.php").on("change", function () {
+    browserSync.reload();
+  });
+
+  /**
+   * Any scss/js/img changes client
+   */
+  gulp.watch(settings.appLocation + "public/css/modules/**/*.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/css/module-styles.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/img/*.{jpg,png}", gulp.parallel("compress-img"));
+  gulp.watch(settings.appLocation + "public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp"));
+  gulp.watch([settings.appLocation + "public/js/modules/**/*.js", settings.appLocation + "public/js/module-scripts.js"], gulp.parallel("waitForScripts"));
+
+  /**
+   * Any scss/js/img changes admin
+   */
+  gulp.watch(settings.appLocation + "admin/css/modules/**/*.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/css/module-styles.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/img/*.{jpg,png}", gulp.parallel("compress-img-admin"));
+  gulp.watch(settings.appLocation + "admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-admin"));
+  gulp.watch([settings.appLocation + "admin/js/modules/**/*.js", settings.appLocation + "admin/js/module-scripts.js"], gulp.parallel("waitForScriptsAdmin"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-all", function () {
+  /**
+   * Any scss/js/img changes client
+   */
+  gulp.watch(settings.appLocation + "public/css/modules/**/*.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/css/module-styles.scss", gulp.parallel("waitForStyles"));
+  gulp.watch(settings.appLocation + "public/img/*.{jpg,png}", gulp.parallel("compress-img"));
+  gulp.watch(settings.appLocation + "public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp"));
+  gulp.watch([settings.appLocation + "public/js/modules/**/*.js", settings.appLocation + "public/js/module-scripts.js"], gulp.parallel("waitForScripts"));
+
+  /**
+   * Any scss/js/img changes admin
+   */
+  gulp.watch(settings.appLocation + "admin/css/modules/**/*.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/css/module-styles.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/img/*.{jpg,png}", gulp.parallel("compress-img-admin"));
+  gulp.watch(settings.appLocation + "admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-admin"));
+  gulp.watch([settings.appLocation + "admin/js/modules/**/*.js", settings.appLocation + "admin/js/module-scripts.js"], gulp.parallel("waitForScriptsAdmin"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-compile", function () {
+  /**
+   * Any scss/js/img changes
    */
   gulp.watch(settings.appLocation + "public/css/modules/**/*.scss", gulp.parallel("waitForStyles"));
   gulp.watch(settings.appLocation + "public/css/module-styles.scss", gulp.parallel("waitForStyles"));
@@ -263,7 +345,24 @@ gulp.task("watch-admin", function () {
   });
 
   /**
-   * Any scss changes
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appLocation + "admin/css/modules/**/*.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/css/module-styles.scss", gulp.parallel("waitForStylesAdmin"));
+  gulp.watch(settings.appLocation + "admin/img/*.{jpg,png}", gulp.parallel("compress-img-admin"));
+  gulp.watch(settings.appLocation + "admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-admin"));
+  gulp.watch([settings.appLocation + "admin/js/modules/**/*.js", settings.appLocation + "admin/js/module-scripts.js"], gulp.parallel("waitForScriptsAdmin"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !admin
+ */
+gulp.task("watch-compile-admin", function () {
+  /**
+   * Any scss/js/img changes
    */
   gulp.watch(settings.appLocation + "admin/css/modules/**/*.scss", gulp.parallel("waitForStylesAdmin"));
   gulp.watch(settings.appLocation + "admin/css/module-styles.scss", gulp.parallel("waitForStylesAdmin"));

@@ -234,7 +234,87 @@ gulp.task("watch-theme", function () {
   });
 
   /**
-   * Any scss changes
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appThemeLocation + "assets/public/css/modules/**/*.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/css/module-styles.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/*.{jpg,png}", gulp.parallel("compress-img-theme"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme"));
+  gulp.watch([settings.appThemeLocation + "assets/public/js/modules/**/*.js", settings.appThemeLocation + "assets/public/js/module-scripts.js"], gulp.parallel("waitForThemeScripts"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-theme-all-sync", function () {
+  browserSync.init({
+    notify: false,
+    proxy: settings.urlToPreview,
+    ghostMode: false
+  });
+
+  /**
+   * Any php changes
+   */
+  gulp.watch(settings.appThemeLocation + "**/*.php").on("change", function () {
+    browserSync.reload();
+  });
+
+  /**
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appThemeLocation + "assets/public/css/modules/**/*.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/css/module-styles.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/*.{jpg,png}", gulp.parallel("compress-img-theme"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme"));
+  gulp.watch([settings.appThemeLocation + "assets/public/js/modules/**/*.js", settings.appThemeLocation + "assets/public/js/module-scripts.js"], gulp.parallel("waitForThemeScripts"));
+  /**
+   * Any scss/js/img changes admin
+   */
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/modules/**/*.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/module-styles.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/*.{jpg,png}", gulp.parallel("compress-img-theme-admin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme-admin"));
+  gulp.watch([settings.appThemeLocation + "assets/admin/js/modules/**/*.js", settings.appThemeLocation + "assets/admin/js/module-scripts.js"], gulp.parallel("waitForThemeScriptsAdmin"));
+});
+
+/**
+ * Watch for changes
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-theme-all", function () {
+  /**
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appThemeLocation + "assets/public/css/modules/**/*.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/css/module-styles.scss", gulp.parallel("waitForThemeStyles"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/*.{jpg,png}", gulp.parallel("compress-img-theme"));
+  gulp.watch(settings.appThemeLocation + "assets/public/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme"));
+  gulp.watch([settings.appThemeLocation + "assets/public/js/modules/**/*.js", settings.appThemeLocation + "assets/public/js/module-scripts.js"], gulp.parallel("waitForThemeScripts"));
+  /**
+   * Any scss/js/img changes admin
+   */
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/modules/**/*.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/module-styles.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/*.{jpg,png}", gulp.parallel("compress-img-theme-admin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme-admin"));
+  gulp.watch([settings.appThemeLocation + "assets/admin/js/modules/**/*.js", settings.appThemeLocation + "assets/admin/js/module-scripts.js"], gulp.parallel("waitForThemeScriptsAdmin"));
+});
+
+/**
+ * Watch for changes without browser sync
+ *
+ * ? php, scss, js
+ * !public
+ */
+gulp.task("watch-compile-theme", function () {
+  /**
+   * Any scss/js/img changes
    */
   gulp.watch(settings.appThemeLocation + "assets/public/css/modules/**/*.scss", gulp.parallel("waitForThemeStyles"));
   gulp.watch(settings.appThemeLocation + "assets/public/css/module-styles.scss", gulp.parallel("waitForThemeStyles"));
@@ -264,7 +344,24 @@ gulp.task("watch-theme-admin", function () {
   });
 
   /**
-   * Any scss changes
+   * Any scss/js/img changes
+   */
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/modules/**/*.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/css/module-styles.scss", gulp.parallel("waitForThemeStylesAdmin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/*.{jpg,png}", gulp.parallel("compress-img-theme-admin"));
+  gulp.watch(settings.appThemeLocation + "assets/admin/img/dist/*.{jpg,png}", gulp.parallel("convert-webp-theme-admin"));
+  gulp.watch([settings.appThemeLocation + "assets/admin/js/modules/**/*.js", settings.appThemeLocation + "assets/admin/js/module-scripts.js"], gulp.parallel("waitForThemeScriptsAdmin"));
+});
+
+/**
+ * Watch for changes admin
+ *
+ * ? php, scss, js
+ * !admin
+ */
+gulp.task("watch-compile-theme-admin", function () {
+  /**
+   * Any scss/js/img changes
    */
   gulp.watch(settings.appThemeLocation + "assets/admin/css/modules/**/*.scss", gulp.parallel("waitForThemeStylesAdmin"));
   gulp.watch(settings.appThemeLocation + "assets/admin/css/module-styles.scss", gulp.parallel("waitForThemeStylesAdmin"));
