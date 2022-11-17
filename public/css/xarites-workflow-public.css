@@ -2,3 +2,28 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+:root {
+  --mainColor: #12345678;
+}
+
+body {
+  color: var(--mainColor);
+  font-family: system-ui;
+}
+
+a {
+  color: rgb(0 0 100% / 90%);
+
+  &:hover {
+    color: rebeccapurple;
+  }
+
+  & span {
+    font-weight: bold;
+  }
+}
+
+:is(input, button):is(:hover, :focus) {
+  color: oklch(40% 0.268735435 34.568626);
+}

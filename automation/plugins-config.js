@@ -14,6 +14,15 @@ var gulp = require("gulp"),
   settings = require("./settings"),
   webpack = require("webpack"),
   browserSync = require("browser-sync").create(),
+  postcss = require("gulp-postcss"),
+  rgba = require("postcss-hexrgba"),
+  autoprefixer = require("autoprefixer"),
+  cssvars = require("postcss-simple-vars"),
+  postcssPresetEnv = require("postcss-preset-env"),
+  nested = require("postcss-nested"),
+  cssImport = require("postcss-import"),
+  mixins = require("postcss-mixins"),
+  colorFunctions = require("postcss-color-function"),
   compileSass = require("gulp-sass")(require("sass")),
   prefix = require("gulp-autoprefixer"),
   minifyCss = require("gulp-clean-css"),
@@ -41,6 +50,19 @@ gulp.task("sass", function () {
     .pipe(concat("styles-bundled.css"))
     .on("error", error => console.log(error.toString()))
     .pipe(gulp.dest(settings.appLocation + "public/css/build/"));
+});
+
+/**
+ *  Create the bundle
+ *
+ *  !public
+ */
+gulp.task("post-css", function () {
+  return gulp
+    .src(settings.appLocation + "public/css/xarites-workflow-public.css")
+    .pipe(postcss([cssImport, mixins, cssvars, nested, rgba, colorFunctions, autoprefixer, postcssPresetEnv]))
+    .on("error", error => console.log(error.toString()))
+    .pipe(gulp.dest(settings.appLocation + "public/css/dist/"));
 });
 
 /**

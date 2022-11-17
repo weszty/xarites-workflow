@@ -1,4 +1,4 @@
-exports.appLocation = "../../../../wp-content/plugins/xarites-workflow/";
+exports.appLocation = "../../../../wp-content/plugins/donation-gateway-netopia/";
 exports.appThemeLocation = "../../../../wp-content/themes/development/";
 exports.urlToPreview = "http://localhost/dev";
 exports.adminUrlToPreview = "http://localhost/dev/wp-admin";
