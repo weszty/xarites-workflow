@@ -2,10 +2,6 @@
 
 ## _Automation workflow_
 
-[![Build Status](https://xarites.com/wp-content/uploads/2022/02/xarites-tool-version.jpg)][xarites]
-
-[![N|Solid](https://xarites.com/wp-content/uploads/2022/02/xarites.jpg)][xarites]
-
 Created by [Vecsei Szilveszter](mailto:szilveszter@xarites.com) for [Xarites].
 
 This is our workflow tool for automating a series of tasks.
