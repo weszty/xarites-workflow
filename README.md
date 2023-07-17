@@ -22,6 +22,7 @@ We use Gulp + Webpack for fast development, here you will find a list of its fea
 This tool must have the following to work properly:
 
 - [node.js](https://nodejs.org/en/) - be sure to have installed, do a version check `node --version`.
+- This tool was created long time ago, tested with node `v16` and `v17`
 
 ## Installation
 
