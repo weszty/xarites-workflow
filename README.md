@@ -45,7 +45,7 @@ This tool has a settings file(`settins.js`), this is the only file you will need
 
 ## 🧐 Usage
 
-> `For plugins`
+> `For plugins 🔌`
 
 I assume you use a boilderplate, I adapted the file structure similar to [this one](https://wppb.me/).
 
@@ -136,7 +136,7 @@ npm run gulp-watch-all
 npm run gulp-watch-all-sync
 ```
 
-> `For themes`
+> `For themes 💻`
 
 Themes will use a simmilar structure like we have for plugins.
 To create the file structure use:
@@ -224,7 +224,7 @@ npm run gulp-convert-webp-theme
 npm run gulp-convert-webp-theme-admin
 ```
 
-## Plugins
+## 🔌 Plugins
 
 This tool is currently extended with the following plugins.
 Instructions on how to use them in your own application are linked below.
@@ -258,7 +258,7 @@ These are optional:
 | [axios]  | Promise based HTTP client for the browser and node.js |
 | [jquery] | JavaScript library for DOM operations                 |
 
-## Development
+## 💻 Development
 
 Want to contribute? Great!
 
