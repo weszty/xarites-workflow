@@ -17,7 +17,7 @@ We use Gulp + Webpack for fast development, here you will find a list of its fea
 - Convert images to WebP format
 - Browser Sync
 
-## Tech
+## 🚀 Tech
 
 This tool must have the following to work properly:
 
@@ -31,7 +31,7 @@ This tool must have the following to work properly:
 - Navigate to automation directory and run `npm install`
 - `All npm tasks will be executed from here!`
 
-## Configuration
+## 🛠️ Configuration
 
 This tool has a settings file(`settins.js`), this is the only file you will need to edit.
 
@@ -43,7 +43,7 @@ This tool has a settings file(`settins.js`), this is the only file you will need
 | `adminUrlToPreview` | your local admin url of the project       |
 | `env`               | your environment (development/production) |
 
-## Usage
+## 🧐 Usage
 
 > `For plugins`
 
@@ -288,7 +288,7 @@ npm i --save-prod <whatever you want>
 
 MIT
 
-**Free Software, Hell Yeah!**
+**Free Software ❤️, Hell Yeah!**
 
 [//]: # "These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax"
 [npm]: https://docs.npmjs.com/cli/v8/commands/npm-install
